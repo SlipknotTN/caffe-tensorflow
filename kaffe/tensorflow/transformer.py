@@ -180,8 +180,9 @@ class TensorFlowEmitter(object):
     def emit_imports(self):
         return self.statement('from kaffe.tensorflow import Network\n')
 
-    def emit_class_def(self, name):
-        return self.statement('class %s(Network):' % (name))
+    def emit_class_def(self):
+        # Use always the same class name, easier to import from generic scripts
+        return self.statement('class Architecture(Network):')
 
     def emit_setup_def(self):
         return self.statement('def setup(self):')
@@ -198,7 +199,7 @@ class TensorFlowEmitter(object):
 
     def emit(self, name, chains):
         s = self.emit_imports()
-        s += self.emit_class_def(name)
+        s += self.emit_class_def()
         self.indent()
         s += self.emit_setup_def()
         self.indent()
