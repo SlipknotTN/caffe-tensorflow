@@ -2,6 +2,14 @@
 
 Convert [Caffe](https://github.com/BVLC/caffe/) models to [TensorFlow](https://github.com/tensorflow/tensorflow).
 
+## Differences between this fork and the original repository:
+- Aligned source code to latest protobuf and Tensorflow version (tested with protobuf 3 and TF 1.41)
+- Added an additional script to save the TF checkpoints and to freeze the model
+
+**TODO**: add link to SqueezeNet conversion README as example.
+
+# Original repository README
+
 ## Usage
 
 Run `convert.py` to convert an existing Caffe model to TensorFlow.
