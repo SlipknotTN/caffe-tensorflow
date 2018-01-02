@@ -44,8 +44,10 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('def_path', help='Model definition (.prototxt) path')
     parser.add_argument('--caffemodel', help='Model data (.caffemodel) path')
-    parser.add_argument('--data-output-path', help='Converted data output path')
-    parser.add_argument('--code-output-path', help='Save generated source to this path')
+    parser.add_argument('--data-output-path', default="./intermediate/data.npy", required=False,
+                        help='Converted data output path, leave default to use freeze graph script')
+    parser.add_argument('--code-output-path', default="./intermediate/model.py", required=False,
+                        help='Save generated source to this path, leave default to use freeze graph script')
     parser.add_argument('-p',
                         '--phase',
                         default='test',
