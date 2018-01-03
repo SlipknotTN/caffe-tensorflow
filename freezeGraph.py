@@ -47,7 +47,6 @@ def main():
         tf.train.write_graph(sess.graph.as_graph_def(), "", graphDefPath, False)
 
     # Freeze the graph
-
     outputNodesNames = ",".join(args.outputNodes)
     freeze_graph(input_graph=graphDefPath, input_saver="", input_binary=True,
                  input_checkpoint=checkpointPath,
